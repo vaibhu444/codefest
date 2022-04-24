@@ -1,0 +1,34 @@
+test_case=int(input())
+
+f=[]
+for i in range(0,test_case):
+    ans = []
+    l=list(map(int,input().strip('][').split(',')))
+    s=min(l)
+    b=max(l)
+    ans+=[b-s]
+    num = l.index(b)+1
+    sum = 30
+    hour = []
+    j = 9
+    # print(num)
+    for k in range(0, num):
+
+        if sum == 60:
+            sum = 0
+            j = j + 1
+            # print("j=",j)
+            if j > 12:
+                j = j % 12
+        hour += [j]
+
+        if k==num-1:
+            break
+        sum += 10
+
+
+
+    ans += list(map(float, [f"{hour[len(hour) - 1]}.{sum}"]))
+    f+=[ans]
+for i in f:
+    print(i)
