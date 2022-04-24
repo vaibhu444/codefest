@@ -1,0 +1,24 @@
+t = int(input())
+p=[]
+for i in range(t):
+    a = list(map(int, list(input().strip('][').split(','))))
+    b = list(map(int, list(input().strip('][').split(','))))
+    ans = list(map(int, list(input().strip('][').split(','))))
+    j = 0
+    k = 0
+    x = 0
+    while(x < len(ans)):
+        if(j < len(a) and ans[x] == a[j]):
+            j = j+1
+            x = x+1
+        elif(k < len(b) and ans[x] == b[k]):
+            k = k+1
+            x = x+1
+        else:
+            p+=["Invalid"]
+            break
+    if(x == len(ans)):
+        p+=["valid"]
+
+for i in p:
+    print(i)
