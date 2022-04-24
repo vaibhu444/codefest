@@ -1,0 +1,16 @@
+test_case=int(input())
+l=[]
+s=[]
+final=[]
+ans=[]
+for i in range(0,test_case):
+    l+=[list(map(int,list(set(input().strip('][').split(',')))))]
+    s+=[[i+1,sum(l[i])]]
+
+final=sorted(s,key=lambda x:x[1])
+
+for l in final:
+    ans+=l
+print(ans)
+
+
